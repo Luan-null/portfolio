@@ -1,6 +1,25 @@
 /* Importando a fonte premium */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
+/* --- RESET UNIVERSAL E TRAVA DE TELA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que bordas não aumentem o tamanho das caixas */
+}
+
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* Uma parede absoluta: NADA passa das laterais */
+}
+
+.conteudo-principal {
+    flex: 1; /* Garante que o conteúdo empurre o rodapé exatamente para o final da tela */
+    width: 100%;
+    overflow-x: hidden;
+}
+
 /* --- VARIÁVEIS MODO CLARO PREMIUM (Padrão) --- */
 :root {
     --cor-fundo: #09090b; /* Preto profundo */
@@ -677,7 +696,7 @@ body {
     body {
         overflow-x: hidden;
     }
-    
+
     /* --- AJUSTES DO HEADER --- */
     .cabecalho-principal {
         padding: 15px 20px; /* Diminuímos o padding nas laterais */
