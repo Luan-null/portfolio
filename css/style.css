@@ -371,6 +371,11 @@ body::before {
     }
 }
 
+.btn-carrossel:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+
 /* Estilo para as imagens dos projetos */
 .imagem-projeto {
     width: 100%; /* Faz a imagem ocupar toda a largura do cartão */
