@@ -725,22 +725,20 @@ body::before {
 
     /* --- AJUSTES DO CARROSSEL NO CELULAR --- */
     .carrossel-container {
-        height: 420px; 
+        height: 440px; 
         width: 100%;
-        max-width: 100vw;
-        overflow-x: hidden; /* A MÁGICA AQUI: Corta as cartas 3D para elas não esticarem a tela do celular */
+        overflow: hidden; /* Garante que nada saia da caixa */
     }
     
     .carrossel-3d {
-        width: 260px; 
+        width: 280px; /* Deixamos a carta central um pouco mais larga, já que ela vai ser a estrela solitária */
     }
     
-    /* Puxamos as cartas um pouquinho mais pro centro no celular (-75% em vez de -85%) */
-    .cartao-projeto.esquerda {
-        transform: translateX(-75%) translateZ(-150px) scale(0.85);
-    }
-    
+    /* Esconde as cartas laterais e joga elas para trás da principal para não esticarem a tela */
+    .cartao-projeto.esquerda,
     .cartao-projeto.direita {
-        transform: translateX(75%) translateZ(-150px) scale(0.85);
+        transform: translateX(0) translateZ(-200px) scale(0.8);
+        opacity: 0;
+        visibility: hidden;
     }
 }
