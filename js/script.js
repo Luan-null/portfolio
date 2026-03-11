@@ -44,7 +44,7 @@ function calcularOrcamento() {
 
     // Monta a mensagem automática para o WhatsApp
     const nomeServico = selectTipo.options[selectTipo.selectedIndex].text;
-    const mensagem = `Olá, Luan! Fiz uma simulação no seu portfólio para um(a) ${nomeServico} e o valor estimado foi de R$ ${total.toFixed(2).replace('.', ',')}. Podemos conversar?`;
+    const mensagem = `Olá, Luan! Fiz uma simulação no seu portfólio para uma ${nomeServico} e o valor estimado foi de R$ ${total.toFixed(2).replace('.', ',')}. Podemos conversar?`;
     
     // Atualiza o link do botão
     btnWhatsapp.href = `https://wa.me/${MEU_NUMERO}?text=${encodeURIComponent(mensagem)}`;
