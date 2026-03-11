@@ -363,10 +363,12 @@ body::before {
     justify-content: center;
 }
 
-.btn-carrossel:hover {
-    background: var(--cor-primaria);
-    color: #fff;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .btn-carrossel:hover {
+        background: var(--cor-primaria);
+        color: #fff;
+        transform: scale(1.1);
+    }
 }
 
 /* Estilo para as imagens dos projetos */
