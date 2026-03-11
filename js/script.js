@@ -140,3 +140,20 @@ btnAvancar.addEventListener('click', () => {
 // Faz a mágica acontecer assim que o site carrega
 atualizarCarrossel();
 iniciarAutoPlay(); // Dá a partida no motor automático!
+
+// --- FUNCIONAMENTO DO MENU MOBILE ---
+const btnHamburguer = document.querySelector('.menu-hamburguer');
+const menuNavegacao = document.querySelector('.menu-navegacao');
+const linksMenu = document.querySelectorAll('.menu-navegacao a');
+
+// 1. Abre e fecha o menu ao clicar no sanduíche
+btnHamburguer.addEventListener('click', () => {
+    menuNavegacao.classList.toggle('ativo');
+});
+
+// 2. Fecha a gaveta automaticamente após clicar em um link (para o site rolar e a tela ficar limpa)
+linksMenu.forEach(link => {
+    link.addEventListener('click', () => {
+        menuNavegacao.classList.remove('ativo');
+    });
+});

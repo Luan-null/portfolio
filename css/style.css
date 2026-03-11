@@ -67,6 +67,12 @@ body::before {
 }
 
 /* --- ESTILO DO NOVO HEADER --- */
+
+/* Esconde o menu sanduíche em telas de computador */
+.menu-hamburguer {
+    display: none;
+}
+
 .cabecalho-principal {
     display: flex;
     justify-content: space-between;
@@ -84,6 +90,7 @@ body::before {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
+    text-decoration: none;
 }
 
 .logo span {
@@ -296,6 +303,7 @@ body::before {
     transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease, z-index 0.6s;
     cursor: pointer;
     margin: 0;
+    overflow: hidden;
 }
 
 /* Estado da Carta no Centro (Ativa) */
@@ -684,16 +692,44 @@ body::before {
    (Telas com menos de 768px de largura)
    ============================================= */
 @media screen and (max-width: 768px) {
-    /* --- AJUSTES DO HEADER --- */
+/* --- HEADER MOBILE COM SANDUÍCHE --- */
     .cabecalho-principal {
-        padding: 15px 20px; /* Diminuímos o padding nas laterais */
-        flex-direction: column; /* No celular, logomarca fica em cima, menu embaixo */
-        gap: 15px; /* Dá espaço entre a logo e o menu */
+        flex-direction: row; /* Coloca todo mundo na mesma linha */
+        justify-content: space-between; /* Espalha os itens pelas pontas */
+        align-items: center;
+        padding: 15px 20px;
+        position: relative; 
     }
 
+    /* Centraliza a logo forçadamente de forma absoluta */
+    .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Esconde os links do menu para não poluir a tela */
     .menu-navegacao {
-        gap: 15px; /* Aproxima os links do menu */
-        font-size: 0.9rem; /* Diminui um pouquinho a letra */
+        display: none; 
+    }
+
+    /* Estiliza os três tracinhos do sanduíche */
+    .menu-hamburguer {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 100; /* Garante que ele fique clicável por cima de tudo */
+    }
+
+    .menu-hamburguer .linha {
+        width: 25px;
+        height: 3px;
+        background-color: var(--cor-texto);
+        border-radius: 5px;
+        transition: all 0.3s ease;
     }
 
     /* --- AJUSTES DA HERO SECTION --- */
@@ -719,19 +755,20 @@ body::before {
     }
 
     .btn-primario, .btn-secundario {
-        width: 100%; /* Faz os botões ocuparem toda a largura */
+        width: 85%; /* Faz os botões ocuparem toda a largura */
         padding: 12px 20px; /* Ajusta o tamanho do botão */
     }
 
     /* --- AJUSTES DO CARROSSEL NO CELULAR --- */
     .carrossel-container {
-        height: 440px; 
+        height: 500px; 
         width: 100%;
         overflow: hidden; /* Garante que nada saia da caixa */
+        position: relative;
     }
     
     .carrossel-3d {
-        width: 280px; /* Deixamos a carta central um pouco mais larga, já que ela vai ser a estrela solitária */
+        width: 276px; /* Deixamos a carta central um pouco mais larga, já que ela vai ser a estrela solitária */
     }
     
     /* Esconde as cartas laterais e joga elas para trás da principal para não esticarem a tela */
@@ -740,5 +777,94 @@ body::before {
         transform: translateX(0) translateZ(-200px) scale(0.8);
         opacity: 0;
         visibility: hidden;
+    }
+
+    /* --- AJUSTES FINAIS DOS BOTÕES DO CARROSSEL MOBILE --- */
+    .controles-carrossel {
+        top: auto;
+        bottom: 30px; /* Coloca a caixa inteira lá no pé do cartão */
+        transform: none; /* Desliga a centralização vertical do computador */
+        justify-content: center; /* A MÁGICA: Manda o pai juntar os dois botões no meio! */
+        gap: 30px; /* O espaço exato e perfeito entre os dois botões */
+    }
+
+    .btn-carrossel {
+        width: 30px;
+        height: 30px;
+        margin: 0; /* Limpa qualquer margem antiga */
+        transform: none !important; /* Limpa qualquer empurrão antigo */
+    }
+
+/* --- AJUSTES DA CALCULADORA NO CELULAR --- */
+    .secao-calculadora {
+        padding: 50px 15px; 
+        width: 96%;
+        overflow: hidden; /* Trava 1: Nada sai da seção */
+        margin-left: -2.5%;
+    }
+
+    .caixa-calculadora {
+        width: 87.5%;
+        min-width: 0; /* Trava 2: Mata qualquer largura mínima que o desktop tenha imposto */
+        max-width: 100%;
+        padding: 25px 15px; 
+        margin: 0 auto; 
+    }
+
+    .titulo-secao {
+        font-size: 1.8rem; /* Reduz o título que estava gigante e forçando espaço */
+        word-wrap: break-word;
+    }
+
+    .grupo-input select {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        font-size: 0.9rem; 
+        text-overflow: ellipsis; /* Trava 3: Se o texto da opção for enorme, ele coloca "..." no final em vez de quebrar a tela */
+    }
+
+    .resultado-box {
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    #valor-total {
+        font-size: 2rem; 
+    }
+
+    #btn-whatsapp {
+        width: 90%;
+        padding: 12px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+/* --- GAVETA DO MENU COM ANIMAÇÃO DESLIZANTE (MOBILE) --- */
+    .menu-navegacao {
+        /* A gaveta já fica montada, mas invisível e um pouco recuada para cima */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 88%;
+        background-color: var(--cor-fundo);
+        padding: 20px;
+        box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+        z-index: 99;
+
+        /* A MÁGICA DA ANIMAÇÃO AQUI */
+        opacity: 0; /* Totalmente transparente */
+        visibility: hidden; /* Impede que o usuário clique no menu fantasma */
+        transform: translateY(-20px); /* Puxa 20 pixels para cima */
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva de animação super fluida e profissional */
+    }
+
+    .menu-navegacao.ativo {
+        /* Quando você clica no sanduíche, o menu revela e desliza para a posição original */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 }
