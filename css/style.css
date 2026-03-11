@@ -668,3 +668,52 @@ body {
         opacity: 1;
     }
 }
+
+/* =============================================
+   --- ESTILOS EXCLUSIVOS PARA CELULAR ---
+   (Telas com menos de 768px de largura)
+   ============================================= */
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+    
+    /* --- AJUSTES DO HEADER --- */
+    .cabecalho-principal {
+        padding: 15px 20px; /* Diminuímos o padding nas laterais */
+        flex-direction: column; /* No celular, logomarca fica em cima, menu embaixo */
+        gap: 15px; /* Dá espaço entre a logo e o menu */
+    }
+
+    .menu-navegacao {
+        gap: 15px; /* Aproxima os links do menu */
+        font-size: 0.9rem; /* Diminui um pouquinho a letra */
+    }
+
+    /* --- AJUSTES DA HERO SECTION --- */
+    .hero {
+        padding: 60px 20px; /* Diminuímos o respiro vertical */
+        min-height: auto; /* Deixa a altura se adaptar ao conteúdo */
+    }
+
+    .hero .titulo {
+        font-size: 2.2rem; /* Letra grande, mas sem quebrar muito o layout */
+        line-height: 1.2;
+    }
+
+    .hero .subtitulo {
+        font-size: 1.1rem; /* Diminui o texto de apoio */
+        margin-bottom: 30px;
+    }
+
+    .botoes-hero {
+        flex-direction: column; /* Empilha os botões (WhatsApp fica embaixo de Projetos) */
+        gap: 10px; /* Aproxima os botões */
+        width: 100%; /* Faz os botões ocuparem toda a largura */
+    }
+
+    .btn-primario, .btn-secundario {
+        width: 100%; /* Faz os botões ocuparem toda a largura */
+        padding: 12px 20px; /* Ajusta o tamanho do botão */
+    }
+}
