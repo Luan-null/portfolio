@@ -769,7 +769,11 @@ body::before {
     }
     
     .carrossel-3d {
-        width: 276px; /* Deixamos a carta central um pouco mais larga, já que ela vai ser a estrela solitária */
+        width: 276px; 
+    }
+
+    .cartao-projeto.ativo {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3); /* Uma sombra mais contida e profissional */
     }
     
     /* Esconde as cartas laterais e joga elas para trás da principal para não esticarem a tela */
