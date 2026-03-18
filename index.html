@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Landing Pages</title>
+    <title data-i18n="head_title">Portfólio | Landing Pages</title>
 
     <link rel="icon" type="image/png" href="img/favicon.png">
 
     <meta property="og:title" content="Luan.null | Landing Pages de Alta Conversão">
-    <meta property="og:description"
-        content="Transformo visitantes em clientes reais com páginas focadas em performance e design moderno.">
+    <meta property="og:description" content="Transformo visitantes em clientes reais com páginas focadas em performance e design moderno.">
     <meta property="og:image" content="https://luan-null.github.io/portfolio/img/whatsapp-capa.png">
     <meta property="og:url" content="https://luan-null.github.io/portfolio">
     <meta property="og:type" content="website">
@@ -20,42 +19,51 @@
 
 <body>
 
+    <!-- Header -->
+
     <header class="cabecalho-principal">
         <a class="logo" href="index.html">Luan<span>.null</span></a>
 
         <nav class="menu-navegacao">
-            <a href="#projetos">Projetos</a>
-            <a href="#jornada">Minha Jornada</a>
+            <a href="#projetos" data-i18n="nav_projetos">Projetos</a>
+            <a href="#jornada" data-i18n="nav_jornada">Minha Jornada</a>
         </nav>
 
-        <button id="btn-tema" class="botao-tema">🌙</button>
-
-        <button class="menu-hamburguer" aria-label="Abrir menu">
-            <span class="linha"></span>
-            <span class="linha"></span>
-            <span class="linha"></span>
-        </button>
+        <div class="controles-header">
+            <button id="btn-idioma" class="botao-tema">EN</button>
+            <button id="btn-tema" class="botao-tema">🌙</button>
+            
+            <button class="menu-hamburguer" aria-label="Abrir menu">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </button>
+        </div>
     </header>
 
     <main class="conteudo-principal">
 
+        <!-- Hero -->
+
         <section class="hero animar-scroll">
             <div class="hero-texto">
-                <span class="badge">Desenvolvedor Web Front-end</span>
-                <h1 class="titulo">Transformo visitantes em <span class="destaque">clientes reais</span>.</h1>
-                <p class="subtitulo">
+                <span class="badge" data-i18n="hero_badge">Desenvolvedor Web Front-end</span>
+                <h1 class="titulo" data-i18n="hero_titulo">Transformo visitantes em <span class="destaque">clientes reais</span>.</h1>
+                <p class="subtitulo" data-i18n="hero_subtitulo">
                     Landing Pages rápidas, modernas e focadas em alta conversão para o seu negócio decolar.
                 </p>
                 <div class="botoes-hero">
-                    <a href="#projetos" class="btn-primario">Ver meus projetos</a>
-                    <a href="https://wa.me/5513996029076" target="_blank" class="btn-secundario">Falar no WhatsApp</a>
+                    <a href="#projetos" class="btn-primario" data-i18n="hero_btn_projetos">Ver meus projetos</a>
+                    <a href="https://wa.me/5513996029076" target="_blank" class="btn-secundario" data-i18n="hero_btn_whatsapp">Falar no WhatsApp</a>
                 </div>
             </div>
         </section>
 
+        <!-- Projetos -->
+
         <section id="projetos" class="secao-projetos animar-scroll">
-            <h2 class="titulo-secao">Projetos Recentes</h2>
-            <p class="subtitulo-secao">Landing pages desenvolvidas com foco em performance e design.</p>
+            <h2 class="titulo-secao" data-i18n="proj_titulo">Projetos Recentes</h2>
+            <p class="subtitulo-secao" data-i18n="proj_subtitulo">Landing pages desenvolvidas com foco em performance e design.</p>
 
             <div class="carrossel-container">
                 <div class="carrossel-3d">
@@ -64,9 +72,8 @@
                         <img src="img/hafen.png" alt="Site institucional da Hafen Consolidators" class="imagem-projeto">
                         <div class="conteudo-projeto">
                             <h3>Hafen Consolidators</h3>
-                            <p>Site institucional desenvolvido para transmitir credibilidade e organização.</p>
-                            <a href="https://hafenconsolidators.com" class="link-projeto" target="_blank">Ver projeto
-                                &rarr;</a>
+                            <p data-i18n="proj_hafen_desc">Site institucional desenvolvido para transmitir credibilidade e organização.</p>
+                            <a href="https://hafenconsolidators.com" class="link-projeto" target="_blank" data-i18n="proj_btn_ver">Ver projeto &rarr;</a>
                         </div>
                     </div>
 
@@ -74,9 +81,8 @@
                         <img src="img/7seas.jpg" alt="Landing page da 7 Seas" class="imagem-projeto">
                         <div class="conteudo-projeto">
                             <h3>7 Seas</h3>
-                            <p>Landing page moderna criada para o setor de logística e comércio exterior.</p>
-                            <a href="https://www.7seasglobal.eu" class="link-projeto" target="_blank">Ver projeto
-                                &rarr;</a>
+                            <p data-i18n="proj_7seas_desc">Landing page moderna criada para o setor de logística e comércio exterior.</p>
+                            <a href="https://www.7seasglobal.eu" class="link-projeto" target="_blank" data-i18n="proj_btn_ver">Ver projeto &rarr;</a>
                         </div>
                     </div>
 
@@ -84,9 +90,8 @@
                         <img src="img/bluehaven.png" alt="Landing page da BlueHaven" class="imagem-projeto">
                         <div class="conteudo-projeto">
                             <h3>BlueHaven</h3>
-                            <p>Plataforma web com foco absoluto na experiência e navegação do usuário.</p>
-                            <a href="https://hafenconsolidators.com/bluehavengroup/" class="link-projeto"
-                                target="_blank">Ver projeto &rarr;</a>
+                            <p data-i18n="proj_bluehaven_desc">Plataforma web com foco absoluto na experiência e navegação do usuário.</p>
+                            <a href="https://hafenconsolidators.com/bluehavengroup/" class="link-projeto" target="_blank" data-i18n="proj_btn_ver">Ver projeto &rarr;</a>
                         </div>
                     </div>
 
@@ -99,71 +104,98 @@
             </div>
         </section>
 
+        <!-- Orçamento -->
+
         <section class="secao-calculadora animar-scroll">
-            <h2 class="titulo-secao">Simule seu Orçamento</h2>
-            <p class="subtitulo-secao">Descubra o investimento estimado para o seu projeto.</p>
+            <h2 class="titulo-secao" data-i18n="calc_titulo">Simule seu Orçamento</h2>
+            <p class="subtitulo-secao" data-i18n="calc_subtitulo">Descubra o investimento estimado para o seu projeto.</p>
 
             <div class="caixa-calculadora">
                 <div class="grupo-input">
-                    <label for="tipo-site">O que você precisa?</label>
+                    <label for="tipo-site" data-i18n="calc_label_tipo">Qual a sua necessidade atual?</label>
                     <select id="tipo-site">
-                        <option value="500">Landing Page Básica (1 página)</option>
-                        <option value="900">Site Institucional</option>
-                        <option value="1500">Plataforma Dinâmica</option>
+                        <option value="1500" data-i18n="calc_opt_landing">Landing Page de Alta Conversão</option>
+                        <option value="2800" data-i18n="calc_opt_inst">Site Institucional Completo</option>
+                        <option value="5000" data-i18n="calc_opt_plat">Plataforma Web / Sob Medida</option>
                     </select>
                 </div>
 
                 <div class="grupo-input">
-                    <label for="prazo">Qual a urgência?</label>
+                    <label for="complexidade" data-i18n="calc_label_comp">Nível de Complexidade?</label>
+                    <select id="complexidade">
+                        <option value="1" data-i18n="calc_comp_basico">Design Profissional e Responsivo</option>
+                        <option value="1.3" data-i18n="calc_comp_avancado">Design Exclusivo + Animações Modernas</option>
+                        <option value="1.6" data-i18n="calc_comp_premium">Premium (SEO, Analytics e Integrações)</option>
+                    </select>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="prazo" data-i18n="calc_label_prazo">Qual a urgência da entrega?</label>
                     <select id="prazo">
-                        <option value="1">Prazo Normal (15 a 20 dias)</option>
-                        <option value="1.5">Urgente (Até 7 dias - +50% no valor)</option>
+                        <option value="1" data-i18n="calc_opt_normal">Prazo Padrão (Qualidade Total - 15 a 20 dias)</option>
+                        <option value="1.5" data-i18n="calc_opt_urgente">Urgente (Prioridade Máxima - Até 7 dias)</option>
                     </select>
                 </div>
 
                 <div class="resultado-box">
-                    <span>Investimento estimado a partir de:</span>
-                    <h3 id="valor-total">R$ 500,00</h3>
-                    <a href="#" id="btn-whatsapp" class="btn-primario" target="_blank">Enviar proposta pelo WhatsApp</a>
+                    <span data-i18n="calc_resultado_texto">Investimento estimado a partir de:</span>
+                    <h3 id="valor-total">R$ 1.500,00</h3>
+                    <a href="#" id="btn-whatsapp" class="btn-primario" target="_blank" data-i18n="calc_btn_wpp">Enviar proposta pelo WhatsApp</a>
                 </div>
             </div>
         </section>
 
+        <!-- Sobre mim -->
+
+        <section class="secao-sobre animar-scroll" id="sobre-mim">
+            <h2 class="titulo-secao" data-i18n="sobre_titulo">Sobre Mim</h2>
+            
+            <div class="conteudo-sobre" style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.6;">
+                <p class="texto-sobre" data-i18n="sobre_p1" style="margin-bottom: 15px;">
+                    Olá! Sou o Luan, um desenvolvedor front-end de 19 anos focado em criar páginas que não são apenas bonitas, mas que trazem resultados reais para o seu negócio.
+                </p>
+                <p class="texto-sobre" data-i18n="sobre_p2" style="margin-bottom: 15px;">
+                    Atualmente, divido meu tempo entre a graduação em Sistemas de Informação na UFES, em Alegre, e meus projetos como freelancer. Acredito que um código limpo e uma rotina organizada são a chave para entregas de alto nível.
+                </p>
+                <p class="texto-sobre" data-i18n="sobre_p3">
+                    Quando não estou codando, gosto de manter uma rotina tranquila, assistir séries, aprender coisas novas e organizar minha vida para evoluir constantemente, tanto pessoal quanto profissionalmente.
+                </p>
+            </div>
+        </section>
+
+        <!-- Jornada -->
+
         <section class="secao-jornada" id="jornada">
 
-            <h2 class="titulo-secao animar-scroll">Minha Jornada</h2>
-            <p class="subtitulo-secao animar-scroll">Construindo uma base sólida, um projeto de cada vez.</p>
+            <h2 class="titulo-secao animar-scroll" data-i18n="jor_titulo">Minha Jornada</h2>
+            <p class="subtitulo-secao animar-scroll" data-i18n="jor_subtitulo">Construindo uma base sólida, um projeto de cada vez.</p>
 
             <div class="linha-tempo">
 
                 <div class="item-jornada animar-scroll">
                     <div class="ponto"></div>
                     <div class="conteudo-jornada">
-                        <span class="data-jornada">A Base de Tudo</span>
-                        <h3>Sistemas de Informação - UFES</h3>
-                        <p>Início da graduação em Alegre. Foco em construir um conhecimento técnico profundo e
-                            estruturado, priorizando o aprendizado de qualidade a longo prazo.</p>
+                        <span class="data-jornada" data-i18n="jor_base_data">A Base de Tudo</span>
+                        <h3 data-i18n="jor_base_titulo">Sistemas de Informação - UFES</h3>
+                        <p data-i18n="jor_base_desc">Início da graduação em Alegre. Foco em construir um conhecimento técnico profundo e estruturado, priorizando o aprendizado de qualidade a longo prazo.</p>
                     </div>
                 </div>
 
                 <div class="item-jornada animar-scroll">
                     <div class="ponto"></div>
                     <div class="conteudo-jornada">
-                        <span class="data-jornada">O Mercado Real</span>
-                        <h3>Desenvolvedor Web Freelancer</h3>
-                        <p>Atuação direta criando e organizando páginas web para empresas, instituições, entre outros.
-                        </p>
+                        <span class="data-jornada" data-i18n="jor_mercado_data">O Mercado Real</span>
+                        <h3 data-i18n="jor_mercado_titulo">Desenvolvedor Web Freelancer</h3>
+                        <p data-i18n="jor_mercado_desc">Atuação direta criando e organizando páginas web para empresas, instituições, entre outros.</p>
                     </div>
                 </div>
 
                 <div class="item-jornada animar-scroll">
                     <div class="ponto-destaque"></div>
                     <div class="conteudo-jornada">
-                        <span class="data-jornada">O Futuro</span>
-                        <h3>Especialista em Landing Pages</h3>
-                        <p>Expandindo o portfólio para ajudar mais empresas a venderem online. O foco é entregar código
-                            limpo, resultados reais para os clientes e manter uma rotina de trabalho 100% remota e com
-                            qualidade de vida.</p>
+                        <span class="data-jornada" data-i18n="jor_futuro_data">O Futuro</span>
+                        <h3 data-i18n="jor_futuro_titulo">Especialista em Landing Pages</h3>
+                        <p data-i18n="jor_futuro_desc">Expandindo o portfólio para ajudar mais empresas a venderem online. O foco é entregar código limpo, resultados reais para os clientes e manter uma rotina de trabalho 100% remota e com qualidade de vida.</p>
                     </div>
                 </div>
 
@@ -176,23 +208,23 @@
         <div class="conteudo-rodape">
             <div class="info-rodape">
                 <h3>Luan</h3>
-                <p>Desenvolvedor Web Front-end focado em Landing Pages que geram resultados reais.</p>
+                <p data-i18n="footer_desc">Desenvolvedor Web Front-end focado em Landing Pages que geram resultados reais.</p>
             </div>
 
             <div class="redes-rodape">
                 <a href="https://github.com/Luan-null" target="_blank" class="link-social">GitHub</a>
-                <a href="https://www.linkedin.com/in/luan-gomes-ribeiro/" target="_blank"
-                    class="link-social">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/luan-gomes-ribeiro/" target="_blank" class="link-social">LinkedIn</a>
                 <a href="https://wa.me/5513996029076" target="_blank" class="link-social">WhatsApp</a>
             </div>
         </div>
 
         <div class="direitos-rodape">
-            <p>&copy; 2026 Luan. Todos os direitos reservados.</p>
+            <p data-i18n="footer_copy">&copy; 2026 Luan. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/lang.js"></script>
 </body>
 
 </html>

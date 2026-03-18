@@ -23,38 +23,66 @@ if (temaAtual === 'claro') {
     }
 });
 
-// --- LÓGICA DA CALCULADORA ---
-const selectTipo = document.getElementById('tipo-site');
-const selectPrazo = document.getElementById('prazo');
-const valorTotal = document.getElementById('valor-total');
-const btnWhatsapp = document.getElementById('btn-whatsapp');
-
-const MEU_NUMERO = "5513996029076"; 
+// Seleciona os elementos da calculadora
+const selectTipo = document.getElementById("tipo-site");
+const selectComplexidade = document.getElementById("complexidade");
+const selectPrazo = document.getElementById("prazo");
+const visorTotal = document.getElementById("valor-total");
+const btnWhatsapp = document.getElementById("btn-whatsapp"); // Pegamos o botão aqui
 
 function calcularOrcamento() {
-    // Pega os valores selecionados e transforma em número
-    const precoBase = parseFloat(selectTipo.value);
-    const multiplicadorPrazo = parseFloat(selectPrazo.value);
-    
-    // Faz a conta
-    const total = precoBase * multiplicadorPrazo;
-    
-    // Atualiza o texto grande na tela
-    valorTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+    // 1. Faz a matemática dos valores numéricos
+    let valorBase = parseFloat(selectTipo.value);
+    let multComplexidade = parseFloat(selectComplexidade.value);
+    let multPrazo = parseFloat(selectPrazo.value);
 
-    // Monta a mensagem automática para o WhatsApp
-    const nomeServico = selectTipo.options[selectTipo.selectedIndex].text;
-    const mensagem = `Olá, Luan! Fiz uma simulação no seu portfólio para uma ${nomeServico} e o valor estimado foi de R$ ${total.toFixed(2).replace('.', ',')}. Podemos conversar?`;
-    
-    // Atualiza o link do botão
-    btnWhatsapp.href = `https://wa.me/${MEU_NUMERO}?text=${encodeURIComponent(mensagem)}`;
+    let total = valorBase * multComplexidade * multPrazo;
+    let valorFormatado = "";
+
+    // 2. Define a moeda com base no idioma
+    if (typeof idiomaAtual !== 'undefined' && idiomaAtual === "en") {
+        let totalDolar = total / 5; // Cotação base
+        valorFormatado = totalDolar.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    } else {
+        valorFormatado = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+
+    // Atualiza o visor na tela
+    visorTotal.innerText = valorFormatado;
+
+    // --- 3. LÓGICA DO WHATSAPP (A MÁGICA) ---
+    // Pega o texto visível que o cliente escolheu (não o número)
+    let textoTipo = selectTipo.options[selectTipo.selectedIndex].text;
+    let textoComplexidade = selectComplexidade.options[selectComplexidade.selectedIndex].text;
+    let textoPrazo = selectPrazo.options[selectPrazo.selectedIndex].text;
+
+    let mensagem = "";
+
+    // Monta a mensagem no idioma correto
+    if (typeof idiomaAtual !== 'undefined' && idiomaAtual === "en") {
+        mensagem = `Hi Luan! I'm interested in starting a project.\n\n` +
+                   `*Project:* ${textoTipo}\n` +
+                   `*Complexity:* ${textoComplexidade}\n` +
+                   `*Timeframe:* ${textoPrazo}\n\n` +
+                   `*Estimated Investment:* ${valorFormatado}`;
+    } else {
+        mensagem = `Olá Luan! Tenho interesse em iniciar um projeto.\n\n` +
+                   `*Projeto:* ${textoTipo}\n` +
+                   `*Complexidade:* ${textoComplexidade}\n` +
+                   `*Prazo:* ${textoPrazo}\n\n` +
+                   `*Investimento Estimado:* ${valorFormatado}`;
+    }
+
+    // Atualiza o link do botão com a mensagem codificada para URL
+    btnWhatsapp.href = `https://wa.me/5513996029076?text=${encodeURIComponent(mensagem)}`;
 }
 
-// Fica "ouvindo" toda vez que o usuário muda uma opção
-selectTipo.addEventListener('change', calcularOrcamento);
-selectPrazo.addEventListener('change', calcularOrcamento);
+// Escuta as mudanças
+selectTipo.addEventListener("change", calcularOrcamento);
+selectComplexidade.addEventListener("change", calcularOrcamento);
+selectPrazo.addEventListener("change", calcularOrcamento);
 
-// Roda a função uma vez assim que o site carrega para ajustar o preço inicial
+// Roda a conta uma vez assim que o site carrega
 calcularOrcamento();
 
 // --- ANIMAÇÕES DE SCROLL (REVEAL) ---
